@@ -11,6 +11,7 @@ import { signOut, useSession } from 'next-auth/react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation';
 import { useContext, useEffect, useState } from 'react'
+import LocationCheck from '@/components/Home/islocationon';
 
 export default function Home() {
 
@@ -64,36 +65,30 @@ export default function Home() {
   };
 
   return (
-    <div className='grid 
-      grid-cols-1
-      md:grid-cols-4 '>
-        
-      <div className='p-3'>
+    <>
+      <LocationCheck />
+      <div className='grid grid-cols-1 md:grid-cols-4'>
+        <div className='p-3'>
           <CategoryList onCategoryChange={(value) => setCategory(value)} />
-
           <RangeSelect onRadiusChange={(value) => setRadius(value)} />
-        
           <SelectRating onRatingChange={(value) => onRatingChange(value)} />
-      </div>
-
-
-      <div className=' col-span-3'>
+        </div>
+  
+        <div className='col-span-3'>
           <GoogleMapView businessList={businessList} />
-
-          <div className='md:absolute mx-2 w-[90%] md:w-[74%]
-           bottom-36 relative md:bottom-3'>
-              {!loading ?
-                <BusinessList businessList={businessList} />
-                :
-                <div className='flex gap-3'>
-                    {[1, 2, 3, 4, 5].map((item, index) => (
-                        <SkeltonLoading key={index} />
-                    ))}
-                </div>
-              }
+          <div className='md:absolute mx-2 w-[90%] md:w-[74%] bottom-36 relative md:bottom-3'>
+            {!loading ? (
+              <BusinessList businessList={businessList} />
+            ) : (
+              <div className='flex gap-3'>
+                {[1, 2, 3, 4, 5].map((item, index) => (
+                  <SkeltonLoading key={index} />
+                ))}
+              </div>
+            )}
           </div>
+        </div>
       </div>
-
-    </div>
-  )
+    </>
+  );
 }
