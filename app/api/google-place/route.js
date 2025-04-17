@@ -4,7 +4,7 @@ const BASE_URL = "https://maps.googleapis.com/maps/api/place";
 const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
 
 export async function GET(request){
-// asdf
+// asdf fasdf
     const {searchParams}=new URL(request.url)
     const category=searchParams.get('category');
     const radius = searchParams.get("radius");
