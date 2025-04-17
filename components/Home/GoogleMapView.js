@@ -7,6 +7,7 @@ import Markers from './Markers';
 const containerStyle = {
   width: '100%',
   height: '500px',
+  border: '3px solid #ccc '
 };
 
 function GoogleMapView({ businessList }) {
