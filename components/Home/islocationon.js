@@ -22,7 +22,6 @@ const LocationCheck = () => {
 
   return (
     <div>
-      <h2>Location Checker</h2>
       <ToastContainer />
     </div>
   );
