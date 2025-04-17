@@ -20,7 +20,7 @@ function BusinessList({businessList}) {
             onClick={()=>slideLeft(elementRef.current)} 
             strokeWidth={1.5} stroke="currentColor" 
             className="w-8 h-8 absolute rotate-180 top-[35%]
-            bg-gray-300 cursor-pointer p-1 rounded-full text-white mb-20">
+            bg-gray-300 cursor-pointer p-1 rounded-full text-white">
             <path strokeLinecap="round" 
             strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
             </svg>
